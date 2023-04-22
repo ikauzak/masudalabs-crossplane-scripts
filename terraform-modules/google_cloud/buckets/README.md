@@ -20,7 +20,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [google_storage_bucket.lmbr-bucket](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket) | resource |
+| [google_storage_bucket.bucket](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket) | resource |
 | [google_storage_bucket_access_control.public_role](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket_access_control) | resource |
 | [google_storage_bucket_iam_binding.admins](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket_iam_binding) | resource |
 | [google_storage_bucket_iam_binding.creators](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket_iam_binding) | resource |
@@ -34,7 +34,7 @@ No modules.
 | <a name="input_bucket_creators"></a> [bucket\_creators](#input\_bucket\_creators) | Lista de usuários/contas de serviço com permissão de `creator` | `list(string)` | `[]` | no |
 | <a name="input_bucket_force_destroy"></a> [bucket\_force\_destroy](#input\_bucket\_force\_destroy) | Forçar a destruição do bucket no comando `terraform destroy` | `bool` | `false` | no |
 | <a name="input_bucket_location"></a> [bucket\_location](#input\_bucket\_location) | Localização do bucket | `string` | `null` | no |
-| <a name="input_bucket_name"></a> [bucket\_name](#input\_bucket\_name) | Nome do bucket, todos os buckets possuem um sufixo `lmbr` | `string` | `null` | no |
+| <a name="input_bucket_name"></a> [bucket\_name](#input\_bucket\_name) | Nome do bucket, todos os buckets possuem um sufixo | `string` | `null` | no |
 | <a name="input_bucket_storage_class"></a> [bucket\_storage\_class](#input\_bucket\_storage\_class) | Storage class do bucket. Valores suportados são: STANDARD, MULTI\_REGIONAL, REGIONAL, NEARLINE, COLDLINE, ARCHIVE. Mais sobre storage class https://cloud.google.com/storage/docs/storage-classes#classes | `string` | `"STANDARD"` | no |
 | <a name="input_bucket_versioning"></a> [bucket\_versioning](#input\_bucket\_versioning) | Habilitar versionamento do bucket | `bool` | `true` | no |
 | <a name="input_bucket_viewers"></a> [bucket\_viewers](#input\_bucket\_viewers) | Lista de usuários/contas de serviço com permissão de `viewer` | `list(string)` | `[]` | no |

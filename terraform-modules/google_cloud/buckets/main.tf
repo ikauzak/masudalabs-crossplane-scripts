@@ -1,9 +1,5 @@
-resource "random_id" "example" {
-  byte_length = 4
-}
-
 resource "google_storage_bucket" "bucket" {
-  name          = "${var.bucket_name}-${terraform.workspace}-${random_id.example.hex}"
+  name          = var.bucket_name
   location      = var.bucket_location
   project       = var.project_id
   force_destroy = var.bucket_force_destroy

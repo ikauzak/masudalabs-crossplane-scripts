@@ -19,7 +19,7 @@ variable "custom_bucket_name" {
 variable "bucket_force_destroy" {
   description = "Forçar a destruição do bucket no comando `terraform destroy`"
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "bucket_location" {

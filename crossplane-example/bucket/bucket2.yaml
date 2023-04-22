@@ -1,0 +1,42 @@
+apiVersion: tf.upbound.io/v1beta1
+kind: Workspace
+metadata:
+  name: example-inline
+  annotations:
+    # The terraform workspace will be named 'coolbucket'. If you omit this
+    # annotation it would be derived from metadata.name - e.g. 'example-inline'.
+    crossplane.io/external-name: coolbucket
+spec:
+  providerConfigRef:
+    name: default
+  forProvider:
+    # Workspaces default to using a remote source - like workspace-remote.yaml.
+    # For simple cases you can use an inline source to specify the content of
+    # main.tf as opaque, inline HCL.
+    source: Remote
+    module: git::https://github.com/ikauzak/masudalabs-crossplane-scripts.git//terraform-modules/google_cloud/buckets?ref=master
+    source: Remote
+    vars:
+    - key: bucket_name
+      value: coolbucket-masudalabs
+    - key: bucket_location
+      value: US
+    varmap:
+      project_id: linear-skill-384413
+      labels:
+        teste: "algumacoisa"
+        teste2: "outracoisa"
+      lifecycle_rules:
+        - action:
+            type: "Delete"
+          condition:
+            age: 10
+        - action:
+            type: "Delete"
+          condition:
+            age: 3
+      bucket_admins:
+        - user:bruno@masudalabs.com.br
+  writeConnectionSecretToRef:
+    namespace: default
+    name: terraform-workspace-example-inline

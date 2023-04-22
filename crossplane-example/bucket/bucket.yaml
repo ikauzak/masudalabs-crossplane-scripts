@@ -1,0 +1,12 @@
+apiVersion: storage.masudalabs.dev/v1alpha1
+kind: Bucket
+metadata:
+  name: masudalabs-crossplane-test
+  labels:
+    creator: crossplane
+spec:
+  projectId: linear-skill-384413
+  location: US
+  compositionSelector:
+    matchLabels:
+       implementation: terraform
